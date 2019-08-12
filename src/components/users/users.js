@@ -31,13 +31,13 @@ class Users extends Component {
             + Dodaj użytkownika
           </Link>
         </header>
-        <div className={styles.tableHeader}>
+        <div className={globalStyles.listHeader}>
           <div className={styles.userName}>Imię</div>
           <div className={styles.userSurname}>Nazwisko</div>
           <div className={styles.userCompany}>Firma</div>
           <div className={styles.userEmail}>Email</div>
         </div>
-        <ul className={styles.usersList}>
+        <ul className={globalStyles.list}>
           {this.state.users.map(user => {
             /** @namespace user.user_id **/
             /** @namespace user.first_name **/
@@ -48,7 +48,7 @@ class Users extends Component {
             /** @namespace user.type **/
             return (
               <li key={user.user_id}
-                  className={styles.userItem}>
+                  className={globalStyles.listItem}>
                 <div className={styles.userName}>
                   {user.first_name}
                 </div>

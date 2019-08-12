@@ -5,6 +5,20 @@ import globalStyles from '../../shares/css/common.module.scss'
 import {Link} from "react-router-dom";
 
 class Companies extends Component {
+  state = {
+    companies: [],
+  };
+
+  componentDidMount() {
+    fetch('/api/company')
+        .then(res => res.json())
+        .then(companies => {
+          this.setState({
+            companies
+          })
+        })
+  }
+
   render() {
     return (
       <div className={styles.companiesComponent}>
@@ -12,10 +26,28 @@ class Companies extends Component {
           <h2>Firmy</h2>
 
           <Link to='/add-company'
-                   className={styles.addLink}>
+                   className={globalStyles.headerWithLink__link}>
             Dodaj firmę
           </Link>
         </header>
+
+        <div className={globalStyles.listHeader}>
+          <div className={styles.companyName}>Nazwa</div>
+        </div>
+        <ul className={styles.companiesList}>
+          {this.state.companies.map(company => {
+            /** @namespace company.company_id **/
+            /** @namespace company.name **/
+            return (
+                <li key={company.company_id}
+                    className={styles.companyItem}>
+                  <div className={styles.companyName}>
+                    {company.name}
+                  </div>
+                </li>
+            )
+          })}
+        </ul>
       </div>
     );
   }
