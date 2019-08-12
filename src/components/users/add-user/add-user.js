@@ -62,9 +62,9 @@ const AddUser = () => {
   
   return (
     <div>
-      <h1>
+      <h2>
         Dodaj użytkownika
-      </h1>
+      </h2>
       <form>
         <div className='input-field'>
           <input
@@ -114,7 +114,7 @@ const AddUser = () => {
   );
 };
 
-// AddUser.propTypes = {
+// AddCompany.propTypes = {
 //
 // };
 

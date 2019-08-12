@@ -1,15 +1,13 @@
 import React from 'react';
-// import {Route, Switch, Redirect} from 'react-router-dom';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-
-
-// import logo from './logo.svg';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar/navbar'
 import ReportsList from './components/reports-list/reports-list';
 import Users from './components/users/users';
-import AddUser from './components/add-user/add-user';
+import AddUser from './components/users/add-user/add-user';
 import Login from './components/login/login'
+import Companies from './components/companies/companies'
+import AddCompany from "./components/companies/add-company/add-company";
 
 
 function App() {
@@ -19,9 +17,10 @@ function App() {
         <Route path='/reports-list' component={ReportsList}/>
         <Route path='/users' component={Users}/>
         <Route path='/add-user' component={AddUser}/>
+        <Route path='/companies' component={Companies}/>
+        <Route path='/add-company' component={AddCompany}/>
         <Route path='/login' component={Login}/>
-        {/*<Route path='/' exact component={Users}/>*/}
-        <Redirect to='/'/>
+        <Route path='/' exact component={ReportsList}/>
       </Router>
   );
 

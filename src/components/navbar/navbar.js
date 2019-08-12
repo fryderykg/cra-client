@@ -21,10 +21,10 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className='c-navbar_list-item'>
-          <NavLink to='/add-user'
+          <NavLink to='/companies'
                    className="c-navbar_link"
                    activeClassName="active">
-            Dodaj użytkownika
+            Firmy
           </NavLink>
         </li>
         <li className='c-navbar_list-item'>

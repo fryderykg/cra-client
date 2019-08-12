@@ -1,5 +1,4 @@
 .usersComponent {
-  padding: 0 24px;
 }
 
 .tableHeader {
@@ -15,10 +14,10 @@
 .userItem {
   display: flex;
   border-bottom: 1px solid var(--color-gray);
-}
 
-.userItem:hover {
-  background-color: var(--color-gray-light);
+  &:hover {
+    background-color: var(--color-gray-light);
+  }
 }
 
 .userName {

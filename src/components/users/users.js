@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 // import PropTypes from 'prop-types';
 
-import styles from './users.module.css';
+import styles from './users.module.scss';
+import globalStyles from '../../shares/css/common.module.scss';
+import {Link} from "react-router-dom";
 
 class Users extends Component {
   state = {
@@ -22,7 +24,13 @@ class Users extends Component {
     console.log('users', this.state.users);
     return (
       <div className={styles.usersComponent}>
-        <h2>Użytkownicy</h2>
+        <header className={globalStyles.headerWithLink}>
+          <h2>Użytkownicy</h2>
+          <Link to='/add-user'
+                className={globalStyles.headerWithLink__link}>
+            + Dodaj użytkownika
+          </Link>
+        </header>
         <div className={styles.tableHeader}>
           <div className={styles.userName}>Imię</div>
           <div className={styles.userSurname}>Nazwisko</div>
