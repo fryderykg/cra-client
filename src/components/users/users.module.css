@@ -1,0 +1,46 @@
+.usersComponent {
+  padding: 0 24px;
+}
+
+.tableHeader {
+  display: flex;
+  background-color: var(--color-gray);
+}
+
+.usersList {
+  padding: 0;
+  list-style-type: none;
+}
+
+.userItem {
+  display: flex;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.userItem:hover {
+  background-color: var(--color-gray-light);
+}
+
+.userName {
+  width: 20%;
+}
+
+.userSurname {
+  width: 20%;
+}
+
+.userCompany {
+  width: 20%;
+}
+
+.userEmail {
+  width: 20%;
+}
+
+.userDeleted {
+
+}
+
+.userType {
+
+}

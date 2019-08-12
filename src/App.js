@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+// import {Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+
+
+// import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/navbar/navbar'
+import ReportsList from './components/reports-list/reports-list';
+import Users from './components/users/users';
+import AddUser from './components/add-user/add-user';
+import Login from './components/login/login'
+
 
 function App() {
+  let routes = (
+      <Router>
+        <Navbar/>
+        <Route path='/reports-list' component={ReportsList}/>
+        <Route path='/users' component={Users}/>
+        <Route path='/add-user' component={AddUser}/>
+        <Route path='/login' component={Login}/>
+        {/*<Route path='/' exact component={Users}/>*/}
+        <Redirect to='/'/>
+      </Router>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='App'>
+        {routes}
+      </div>
   );
 }
 
